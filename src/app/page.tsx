@@ -10,6 +10,7 @@ export default function Home() {
     {/*  Feed*/}
 
 
+
     {/*  Modal*/}
     </div>
   );
