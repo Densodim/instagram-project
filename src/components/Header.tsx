@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
+import {MagnifyingGlassIcon, PlusCircleIcon} from '@heroicons/react/24/outline'
+import {HomeIcon} from '@heroicons/react/24/solid'
 
 
 export default function Header() {
@@ -10,9 +11,9 @@ export default function Header() {
                 <div className="flex items-center space-x-4">
                     <div className="cursor-pointer h-24 w-24 relative hidden lg:inline-grid">
                         <Image
-                            src="https://cdn.pixabay.com/photo/2015/06/29/22/37/follow-826033_640.png"
-                            width={256}
-                            height={256}
+                            src="https://mobile-review.com/all/wp-content/uploads/2021/07/instagram-logo.png"
+                            width={400}
+                            height={400}
                             className="object-contain"
                             alt="Image logo instagram"
                         />
@@ -29,23 +30,25 @@ export default function Header() {
                 </div>
 
                 {/* Middle */}
-                <div className="relative flex items-center w-full max-w-xs">
-                    <div className="absolute left-3 flex items-center pointer-events-none">
-                        <MagnifyingGlassIcon className="h-5 w-5 text-gray-500"/>
-                    </div>
-
+                <div
+                    className="mt-1 flex items-center bg-gray-50 border border-gray-300 rounded-md focus-within:ring-1 focus-within:ring-black">
+                    <MagnifyingGlassIcon className="h-5 w-5 text-gray-500 ml-3"/>
                     <input
                         type="text"
                         placeholder="Search form"
-                        className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-full text-gray-700 focus:outline-none focus:border-gray-400"
+                        className="bg-gray-50 pl-3 pr-3 py-2 w-full text-sm text-gray-700 focus:outline-none rounded-md"
                     />
                 </div>
 
+
                 {/* Right */}
-                <div className="flex items-center">
-                    <h1>Right side</h1>
+                <div className="flex items-center space-x-4">
+                    <HomeIcon className=" hidden md:inline-flex h-5 w-5 cursor-pointer hover:scale-125 transition-transform duration-200 ease-out" />
+                    <PlusCircleIcon className="h-5 w-5 cursor-pointer hover:scale-125 transition-transform duration-200 ease-out" />
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT23pygNK5BeDGhj88DN6qfpSg0pMb78Tlo9A&s" alt="user-image"  className="h-10 rounded-full cursor-pointer" />
                 </div>
             </div>
+
 
         </>
     )
