@@ -1,0 +1,41 @@
+'use client';
+
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+import minifaker from 'minifaker';
+import 'minifaker/locales/en'
+import {useEffect, useState} from "react";
+import Story from "@/components/Story";
+
+export default function Stories() {
+    const [stories, setStories] = useState<StoryType[]>([]);
+
+    useEffect(() => {
+        const storyUsers: StoryType[] = minifaker.array(20, (i: number): StoryType => ({
+            username: minifaker.username({locale: 'en'}).toLowerCase(),
+            img: `https://i.pravatar.cc/150?img=${Math.round(Math.random() * 70)}`,
+            id: i,
+        }))
+        setStories(storyUsers);
+        console.log(storyUsers)
+    }, []);
+
+    return (
+
+        <>
+            <div>
+                {stories.map(user => (
+                    <Story key={user.id} username={user.username} img={user.img}/>
+                ))}
+            </div>
+        </>
+    )
+}
+
+//type
+type StoryType = {
+    username: string,
+    img: string,
+    id: number,
+}
