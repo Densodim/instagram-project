@@ -5,7 +5,8 @@ import {
     BookmarkIcon,
     ChatBubbleBottomCenterTextIcon,
     EllipsisHorizontalIcon,
-    HeartIcon
+    HeartIcon,
+    FaceSmileIcon,
 } from '@heroicons/react/24/solid'
 
 
@@ -31,6 +32,19 @@ export default function Post({id, img, userImg, username, caption}: Post) {
                     </div>
                     <BookmarkIcon className='btn'/>
                 </div>
+
+                {/*    Post comments*/}
+                <p className='p-5 truncate'>
+                    <span className='font-bold mr-2'>{username}</span>
+                    {caption}
+                </p>
+
+            {/*    Post input box*/}
+            <form className='flex items-center p-4'>
+                <FaceSmileIcon className='h-7 text-transparent stroke-2 stroke-black'/>
+                <input type='text' placeholder='Enter your comment here...' className='border-none flex-1 focus:ring-0'/>
+                <button className='text-blue-400 font-bold'>Post</button>
+            </form>
             </div>
         </>
     )
