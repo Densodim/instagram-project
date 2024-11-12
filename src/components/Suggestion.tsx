@@ -1,8 +1,6 @@
 "use client"
 
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
 import minifaker from 'minifaker'
 import "minifaker/locales/en"
 import { useEffect, useState } from "react"
