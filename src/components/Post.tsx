@@ -1,5 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
+
 import type { Post } from "@/components/Posts"
 import {
   BookmarkIcon,
@@ -10,6 +9,7 @@ import {
 } from "@heroicons/react/24/solid"
 
 export default function Post({ id, img, userImg, username, caption }: Post) {
+  console.log("id", id)
   return (
     <>
       <div className="bg-white my-7 border rounded-md">
