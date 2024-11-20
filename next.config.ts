@@ -2,7 +2,16 @@ import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ["mobile-review.com", "celes.club"],
+    remotePatterns: [{
+      protocol: 'https',
+      hostname: 'mobile-review.com',
+      port: '',
+      pathname: '/all/wp-content/uploads/**',
+    },
+      {
+        protocol: "https",
+        hostname: "celes.club"
+      }],
   },
   /* config options here */
 }

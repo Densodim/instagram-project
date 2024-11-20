@@ -1,22 +1,18 @@
 "use client"
 
 
-import minifaker from 'minifaker'
-import "minifaker/locales/en"
+import {faker} from '@faker-js/faker'
 import { useEffect, useState } from "react"
 
 export default function Suggestion() {
   const [suggestions, setSuggestions] = useState<Suggestion[]>([])
 
   useEffect(() => {
-    const suggestion: Suggestion[] = minifaker.array(
-      5,
-      (i: number): Suggestion => ({
-        username: minifaker.username({ locale: "en" }).toLowerCase(),
-        jobTitle: minifaker.jobTitle({ locale: "en" }).toLowerCase(),
-        id: i,
-      }),
-    )
+      const suggestion: Suggestion[] = Array.from({ length: 5 }, (_, i) => ({
+          username: faker.internet.username().toLowerCase(),
+          jobTitle: faker.person.jobTitle().toLowerCase(),
+          id: i,
+      }));
     setSuggestions(suggestion)
   }, [])
   return (
@@ -26,8 +22,8 @@ export default function Suggestion() {
         <button className="text-gray-600 font-semibold">See All</button>
       </div>
       {suggestions.map((suggestion) => (
-        <>
-          <div className="flex items-center justify-between mt-3">
+
+          <div className="flex items-center justify-between mt-3" key={suggestion.id}>
             <img
               src={`https://i.pravatar.cc/150?img=${Math.round(Math.random() * 70)}`}
               alt=""
@@ -41,7 +37,7 @@ export default function Suggestion() {
             </div>
             <button className="font-semibold text-blue-400">Follow</button>
           </div>
-        </>
+
       ))}
     </div>
   )
