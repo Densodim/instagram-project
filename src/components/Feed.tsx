@@ -1,7 +1,13 @@
+
 import MiniProfile from "@/components/MiniProfile"
 import Posts from "@/components/Posts"
 import Stories from "@/components/Stories"
 import Suggestion from "@/components/Suggestion"
+
+// import dynamic from "next/dynamic";
+// const Stories = dynamic(() => import("@/components/Stories"), {ssr: false})
+// const Suggestion = dynamic(() => import("@/components/Suggestion"), {ssr: false})
+
 
 export default function Feed() {
   return (

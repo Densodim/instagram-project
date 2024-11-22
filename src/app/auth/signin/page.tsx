@@ -1,3 +1,5 @@
+
+
 import Header from "@/components/Header";
 import SignIn from "@/components/sign-in";
 import {auth} from "../../../../auth";
@@ -5,7 +7,7 @@ import {SingOut} from "@/components/sign-out";
 
 
 export default async function SignInPage() {
-    const session = await auth();
+
     return (
         <>
             <Header/>
@@ -24,12 +26,21 @@ export default async function SignInPage() {
                     <div className="rounded-t-md bg-gray-200 p-4 font-bold">
                         Current Session
                     </div>
-                    <div className="whitespace-pre-wrap break-all px-4 py-6">
-                    {JSON.stringify(session, null, 2)}
-                    </div>
+                    {/*<div className="whitespace-pre-wrap break-all px-4 py-6">*/}
+                    {/*{JSON.stringify(session, null, 2)}*/}
+                    {/*</div>*/}
                 </div>
 
             </div>
         </>
     )
 }
+
+// export async function getServerSideProps() {
+//     const session = await auth();
+//     return {
+//         props: {
+//             session,
+//         },
+//     };
+// }
