@@ -4,6 +4,7 @@ import Header from "@/components/Header"
 
 export default function Home() {
   return (
+
     <div className="bg-gray-50 min-h-screen">
       {/*  Header */}
       <Header />
@@ -14,5 +15,6 @@ export default function Home() {
       {/*  Modal*/}
 
     </div>
+
   )
 }
